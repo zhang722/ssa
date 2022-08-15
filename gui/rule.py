@@ -36,10 +36,10 @@ class Rule(QWidget):
         layout.addWidget(hLayoutWidget)
         self.setLayout(layout)
         
-        self.timer = QTimer(self)
-        self.timer.timeout.connect(self.timeoutFunction)
-        self.timer.start(500)
-        self.time = 0
+        # self.timer = QTimer(self)
+        # self.timer.timeout.connect(self.timeoutFunction)
+        # self.timer.start(500)
+        # self.time = 0
 
         
     def getName(self):
@@ -54,9 +54,9 @@ class Rule(QWidget):
     def setValue(self, value):
         self.value.setText(value)
 
-    def timeoutFunction(self):
-        self.timer.stop()
-        self.time += 1
-        self.setValue(str(self.time))
-        self.timer.start()
+    # def timeoutFunction(self):
+    #     self.timer.stop()
+    #     self.time += 1
+    #     self.setValue(str(self.time))
+    #     self.timer.start()
 

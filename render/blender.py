@@ -20,18 +20,17 @@ class Blender:
         bpy.data.objects[name].rotation_euler[1] = self.data["q"][1]
         bpy.data.objects[name].rotation_euler[2] = self.data["q"][2]
 
-    def update(self):
-        self.data["t"] = [10*math.cos(6.28 / self.N * self.iterNum), 10*math.sin(6.28 / self.N * self.iterNum), 0]
-        self.data["q"] = [0, 0, 6.28 / self.N * self.iterNum]
-        self.iterNum += 1
+    def update(self, data):
+        self.data["t"] = data
+        # self.data["q"] = data["q"]
 
 
-def renderUpdate(blender):
-    blender.assignToBlender("Cube")
-    blender.update()
-    if blender.iterNum > 99:
-        raise Exception("stop iter")
-    return blender.delta_time
+# def renderUpdate(blender):
+#     blender.assignToBlender("Cube")
+#     blender.update()
+#     if blender.iterNum > 99:
+#         raise Exception("stop iter")
+#     return blender.delta_time
 
 
 def main():

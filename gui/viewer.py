@@ -9,7 +9,8 @@ from PyQt5.QtWidgets import (QApplication,
                              QLabel,
                              )
 
-import rule
+import gui.rule as rule
+import subprocess
 
 
 class MainWindow(QMainWindow):
@@ -39,6 +40,7 @@ if __name__ == "__main__":
     window = MainWindow()
     window.show()  # IMPORTANT!!!!! Windows are hidden by default.
 
+    subprocess.run(['/home/sen/zhangs_files/downloads/blender-3.2.0-linux-x64/blender','./render/render.blend', '-P', '~/zhangs_files/qt_ws/ssa/app.py'])
 
     # Start the event loop.
     app.exec()
